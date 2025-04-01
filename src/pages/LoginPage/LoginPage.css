@@ -1,0 +1,287 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.login-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image:
+    linear-gradient(
+      46.33deg,
+      rgba(33, 33, 33, 0.839216) 0%,
+      rgba(66, 66, 66, 0.239216) 178.98%
+    ),
+    url("../../assets/background-leaf.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+/* This container is just for layout, 
+   no separate background here. 
+*/
+.login-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* We'll rely on .login-page for the overall background */
+}
+
+/* 
+   Left section covers left 50% horizontally 
+   for the brand container. 
+   It's effectively "see-through" so you see the 
+   page's background behind it.
+*/
+.left-section {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* no gradient needed here now, 
+     the entire .login-page has the gradient + leaf 
+  */
+}
+
+.brand-container {
+  padding: 4rem;
+  position: relative;
+  margin-left: 2rem;
+  color: white; /* text is white for better contrast over dark gradient */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.tagline h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.tagline p {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* 
+   Right section is absolutely positioned 
+   according to your specs:
+     top: 132px (14.66% of 900)
+     left: 780px (54.17% of 1440)
+     width: 460px (~32% of 1440)
+     height: 768px (~85% of 900)
+*/
+.right-section {
+  position: absolute;
+  top: 14.66%;
+  left: 54.17%;
+  width: 31.94%;
+  height: 85.33%;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: auto; /* if form content is taller than the box */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* The card inside the right-section */
+.login-card {
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Login header */
+.login-header {
+  margin-bottom: 1.5rem;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+.login-header h3 {
+  color: #333;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.login-header h2 {
+  color: #000;
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Form elements */
+.form-group {
+  margin-bottom: 1.0rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: #f03e3e;
+}
+
+.forgot-password {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* Login button */
+.login-button {
+  width: 100%;
+  background-color: #f03e3e;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.login-divider {
+  position: relative;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.login-divider::before {
+  left: 0;
+}
+
+.login-divider::after {
+  right: 0;
+}
+
+.login-divider span {
+  background-color: #fff;
+  padding: 0 10px;
+  color: #666;
+  position: relative;
+  z-index: 1;
+}
+
+/* Social login buttons */
+.social-logins {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.social-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.social-login img {
+  width: 20px;
+  height: 20px;
+}
+
+.social-login span {
+  font-size: 0.9rem;
+}
+
+/* Signup link */
+.signup-link {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.signup-link a {
+  color: #f03e3e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* 
+   Basic responsiveness so it doesn't 
+   go off the screen on smaller devices
+*/
+@media (max-width: 992px) {
+  .left-section {
+    width: 100%;
+    height: 30%;
+  }
+  .right-section {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 2rem auto;
+  }
+  .login-card {
+    padding: 1.5rem;
+  }
+}

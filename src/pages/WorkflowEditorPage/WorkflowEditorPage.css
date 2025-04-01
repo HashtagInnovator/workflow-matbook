@@ -1,0 +1,215 @@
+/* Overall layout */
+.editor-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr 250px; /* left sidebar, main, right panel */
+  grid-template-rows: 100vh; /* full height */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Left Sidebar (components palette) */
+.editor-sidebar {
+  background-color: #fefefe;
+  border-right: 1px solid #ddd;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.editor-sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.sidebar-button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Main content area: includes the top toolbar and the ReactFlow canvas */
+.editor-main {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+/* Top toolbar */
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 16px;
+}
+
+.toolbar-left,
+.toolbar-center,
+.toolbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar-left .generic-add-button {
+  background-color: #eee;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.toolbar-left .generic-add-button:hover {
+  background-color: #ddd;
+}
+
+.toolbar-title {
+  margin: 0 16px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.save-button {
+  margin-right: 10px;
+  background-color: #EE3425;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: #999;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* The React Flow area takes up remaining vertical space */
+.reactflow-wrapper {
+  flex: 1;
+  height: calc(100vh - 50px); /* subtract toolbar height */
+}
+
+/* Right Properties Panel */
+.editor-properties {
+  background-color: #fafafa;
+  border-left: 1px solid #ddd;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.editor-properties h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.properties-panel {
+  margin-top: 1rem;
+}
+
+.properties-panel label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.properties-panel input {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Save Modal overlay */
+.save-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.save-modal {
+  background-color: #fff;
+  width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.save-modal h2 {
+  font-size: 20px;
+  margin: 0;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-form-group {
+  padding: 16px 24px;
+}
+
+.modal-form-group:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.modal-form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 14px;
+}
+
+.modal-form-group input,
+.modal-form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 24px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+}
+
+.confirm-save-button {
+  background-color: #EE3425;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
